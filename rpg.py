@@ -4,7 +4,7 @@ import string
 import random
 
 # choosing a random characters_number for generating password
-characters_number = random.randint(8,15)
+num = random.randint(8,15)
 
 # store all characters in lists 
 s1 = list(string.ascii_lowercase)
@@ -20,15 +20,16 @@ random.shuffle(s4)
 
 
 # calculate 
-x1 = round(characters_number * random.uniform(0.3,0.35))
-x2 = round(characters_number * random.uniform(0.2,0.3))
-x3 = round(characters_number * random.uniform(0,0.15))
-x4 = characters_number - (x1 + x2 + x3)
-
-upper_part = x1
-lower_part = x2
-digits_part = x3
-symbols_part = x4
+x1 = round(num * random.uniform(0.3,0.35))
+x2 = round(num * random.uniform(0.2,0.3))
+x3 = round(num * random.uniform(0,0.15))
+x4 = num - (x1 + x2 + x3)
+lst = [x1, x2, x3, x4]
+random.shuffle(lst)
+upper_part = lst[0]
+lower_part = lst[1]
+digits_part = lst[2]
+symbols_part = lst[3]
 
 # generation of the password with random characters
 result = []
